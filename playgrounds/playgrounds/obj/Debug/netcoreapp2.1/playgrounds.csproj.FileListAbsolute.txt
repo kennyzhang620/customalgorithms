@@ -9,3 +9,9 @@ C:\Users\User\source\repos\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playg
 C:\Users\User\source\repos\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.AssemblyInfo.cs
 C:\Users\User\source\repos\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.dll
 C:\Users\User\source\repos\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.pdb
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.csprojAssemblyReference.cache
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.AssemblyInfo.cs
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.dll
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Debug\netcoreapp2.1\playgrounds.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\playgrounds\\playgrounds\\playgrounds.csproj": {}
+    "C:\\Users\\User\\source\\repos\\algorithms\\playgrounds\\playgrounds\\playgrounds.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\playgrounds\\playgrounds\\playgrounds.csproj": {
+    "C:\\Users\\User\\source\\repos\\algorithms\\playgrounds\\playgrounds\\playgrounds.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\playgrounds\\playgrounds\\playgrounds.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\algorithms\\playgrounds\\playgrounds\\playgrounds.csproj",
         "projectName": "playgrounds",
-        "projectPath": "C:\\Users\\User\\source\\repos\\playgrounds\\playgrounds\\playgrounds.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\algorithms\\playgrounds\\playgrounds\\playgrounds.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\playgrounds\\playgrounds\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\algorithms\\playgrounds\\playgrounds\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
