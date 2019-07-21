@@ -16,8 +16,11 @@ namespace playgrounds
             {
                 if (Palindrome(c))
                 {
-                    output[index] = c;
-                    index++;
+                    if (index != (DetectSize(inputarray, 1000) - 1))
+                    {
+                        output[index] = c;
+                        index++;
+                    }
                 }
              //   Console.WriteLine("Char:" + c);
             }

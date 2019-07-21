@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Timers;
 
 namespace playgrounds
 {
-    class Program
+    class Program: Class1
     {
+        static int elapsedTime = 0;
         // Given an upper bound, it searches for prime numbers up to that point.
         static void Main(string[] args)
         {
@@ -25,6 +27,9 @@ namespace playgrounds
                     break;
                 case "Palindrome":
                     Palindrome();
+                    break;
+                case "Benchmark":
+                    Benchmark();
                     break;
                 default:
                     Console.WriteLine("Error. Please Try Again");
@@ -132,11 +137,44 @@ namespace playgrounds
                         break;
                 }
 
+            }
 
+            void Benchmark()
+            {
+                Console.WriteLine("Initalizing System...");
+                Timer timer = new Timer(1);
+                timer.Elapsed += RecordTime;
+                timer.Enabled = true;
+                timer.AutoReset = true;
+                timer.Start();
+
+                Console.WriteLine("Benchmarking...");
+                Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 2500");
+                Test1(2500);
+                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 75000");
+                Test1(75000);
+                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 125000");
+                Test1(125000);
+                int[] testarray = new int[375001];
+                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Brute Force: Prime Numbers (Optimized). Upper Limit: 375000");
+                testarray = Test1Optimized(375000);
+                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Palindromes: Previous Setup. Upper Limit: 375000");
+                int[] testarray2 = isPalidrome(testarray);
+                Console.WriteLine("Finished in: " + elapsedTime);
 
             }
 
 
+        }
+
+        private static void RecordTime(Object source, ElapsedEventArgs e)
+        {
+          // Console.WriteLine(elapsedTime);
+            elapsedTime++;
         }
     }
 }
