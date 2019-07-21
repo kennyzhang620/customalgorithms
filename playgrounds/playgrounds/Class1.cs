@@ -9,9 +9,58 @@ namespace playgrounds
        
     public static int[] isPalidrome(int[] inputarray)
         {
-            int[] output;
+            int[] output = new int[DetectSize(inputarray, 1000)];
+            int index = 0;
+      //      Console.WriteLine(Palindrome(10101010101010101));
+            foreach (int c in inputarray)
+            {
+                if (Palindrome(c))
+                {
+                    output[index] = c;
+                    index++;
+                }
+             //   Console.WriteLine("Char:" + c);
+            }
+            return output;  
 
         }
+
+    public static bool Palindrome(long input)
+        {
+            string check = input.ToString();
+            int numberofElements = 0;
+
+            foreach (char c in check)
+            {
+                numberofElements++;
+            }
+
+            string[] returned = new string[numberofElements];
+            int index = 0;
+
+            foreach (char c in check)
+            {
+                returned[index] = c.ToString();
+                index++;
+            }
+
+            string confirm = "";
+            for (int i = (index - 1); i>=0;i--)
+            {
+                confirm = confirm + returned[i];
+             //   Console.WriteLine(confirm);
+            }
+
+            if (confirm == check)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    
 
     public static int Average(int[] inputarray)
         {
@@ -82,6 +131,83 @@ namespace playgrounds
                     output = i;
                     break;
                 }
+            }
+            return output;
+        }
+
+       public static int[] Test1(int Maximum)
+        {
+            Console.WriteLine("Computing..." + " Upper Bound: " + Maximum);
+            int[] output = new int[Maximum];
+            int outputIndex = 0;
+
+            output[0] = 1;
+            for (int i = 1; i < Maximum; i++)
+            {
+                //  Console.WriteLine("On: " + i);
+                for (int index = 1; index < i; index++)
+                {
+                    // Console.WriteLine(i + " divided by " + index);
+                    if ((index != 1))
+                    {
+                        if (i % index != 0)
+                        {
+                            output[outputIndex] = i;
+                            //  Console.WriteLine(i + " is Prime.");
+                        }
+                        else
+                        {
+                            output[outputIndex] = 0;
+                            // Console.WriteLine(i + " is not Prime");
+                            i++;
+                            index = 1;
+                        }
+                    }
+                    else
+                    {
+                        output[outputIndex] = i;
+                    }
+                }
+                if (outputIndex < (Maximum - 1))
+                    outputIndex++;
+            }
+            return output;
+        }
+       public static int[] Test1Optimized(int Maximum)
+        {
+            Console.WriteLine("Computing..." + " Upper Bound: " + Maximum);
+            int[] output = new int[Maximum];
+            int outputIndex = 0;
+
+            output[0] = 1;
+            for (int i = 1; i < Maximum; i = i + 2)
+            {
+                //  Console.WriteLine("On: " + i);
+                for (int index = 1; index < i; index = index + 2)
+                {
+                    // Console.WriteLine(i + " divided by " + index);
+                    if ((index != 1))
+                    {
+                        if (i % index != 0)
+                        {
+                            output[outputIndex] = i;
+                            //  Console.WriteLine(i + " is Prime.");
+                        }
+                        else
+                        {
+                            output[outputIndex] = 0;
+                            // Console.WriteLine(i + " is not Prime");
+                            i++;
+                            index = 1;
+                        }
+                    }
+                    else
+                    {
+                        output[outputIndex] = i;
+                    }
+                }
+                if (outputIndex < (Maximum - 1))
+                    outputIndex++;
             }
             return output;
         }

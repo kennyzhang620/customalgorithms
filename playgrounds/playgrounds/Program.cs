@@ -7,7 +7,7 @@ namespace playgrounds
         // Given an upper bound, it searches for prime numbers up to that point.
         static void Main(string[] args)
         {
-            Console.WriteLine("Run which program: PrimeDetector/ArrayCount/RootDetector/BasicAverager");
+            Console.WriteLine("Run which program: PrimeDetector/ArrayCount/RootDetector/BasicAverager/Palindrome");
             string input = Console.ReadLine();
 
             switch (input) {
@@ -22,6 +22,9 @@ namespace playgrounds
                     break;
                 case "BasicAverager":
                     Averager();
+                    break;
+                case "Palindrome":
+                    Palindrome();
                     break;
                 default:
                     Console.WriteLine("Error. Please Try Again");
@@ -43,10 +46,10 @@ namespace playgrounds
                 switch (input2)
                 {
                     case "Long":
-                        primes = Test1(a);
+                        primes = Class1.Test1(a);
                         break;
                     case "Optimized":
-                        primes = Test1Optimized(a);
+                        primes = Class1.Test1Optimized(a);
                         break;
                     default:
                         Console.WriteLine("Error. Please Try Again");
@@ -113,82 +116,26 @@ namespace playgrounds
    
             }
 
-            int[] Test1(int Maximum)
+            void Palindrome()
             {
-                Console.WriteLine("Computing..." + " Upper Bound: " + Maximum);
-                int[] output = new int[Maximum];
-                int outputIndex = 0;
+                Console.WriteLine("Enter your array: ");
 
-                output[0] = 1;
-                for (int i = 1; i < Maximum; i++)
-                {
-                  //  Console.WriteLine("On: " + i);
-                    for (int index = 1; index < i; index++)
-                    {
-                       // Console.WriteLine(i + " divided by " + index);
-                        if ((index != 1))
-                        {
-                            if (i % index != 0)
-                            {
-                                output[outputIndex] = i;
-                                 //  Console.WriteLine(i + " is Prime.");
-                            }
-                            else
-                            {
-                                output[outputIndex] = 0;
-                                 // Console.WriteLine(i + " is not Prime");
-                                i++;
-                                index = 1;
-                            }    
-                        }
-                        else
-                        {
-                                output[outputIndex] = i;
-                        }
-                    }
-                    if (outputIndex < (Maximum - 1))
-                        outputIndex++;
-                }
-                return output;
-            }
-            int[] Test1Optimized(int Maximum)
-            {
-                Console.WriteLine("Computing..." + " Upper Bound: " + Maximum);
-                int[] output = new int[Maximum];
-                int outputIndex = 0;
+                int[] arrayinput = Array.ConvertAll(Console.ReadLine().Split(','), int.Parse);
+                int[] outputarray = Class1.isPalidrome(arrayinput);
 
-                output[0] = 1;
-                for (int i = 1; i < Maximum; i = i + 2)
+                Console.WriteLine("Size: " + Class1.DetectSize(arrayinput, 1000));
+                for (int ab = 0; ab < (Class1.DetectSize(arrayinput, 1000)); ab++)
                 {
-                    //  Console.WriteLine("On: " + i);
-                    for (int index = 1; index < i; index = index + 2)
-                    {
-                        // Console.WriteLine(i + " divided by " + index);
-                        if ((index != 1))
-                        {
-                            if (i % index != 0)
-                            {
-                                output[outputIndex] = i;
-                                //  Console.WriteLine(i + " is Prime.");
-                            }
-                            else
-                            {
-                                output[outputIndex] = 0;
-                                // Console.WriteLine(i + " is not Prime");
-                                i++;
-                                index = 1;
-                            }
-                        }
-                        else
-                        {
-                            output[outputIndex] = i;
-                        }
-                    }
-                    if (outputIndex < (Maximum - 1))
-                        outputIndex++;
+                    Console.WriteLine("Palindromes: " + outputarray[ab]);
+
+                    if (outputarray[ab] == 0)
+                        break;
                 }
-                return output;
+
+
+
             }
+
 
         }
     }
