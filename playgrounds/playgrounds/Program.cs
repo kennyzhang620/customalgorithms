@@ -181,7 +181,7 @@ namespace playgrounds
             void Benchmark()
             {
                 Console.WriteLine("Initalizing System...");
-                Timer timer = new Timer(1);
+                Timer timer = new Timer(1000);
                 timer.Elapsed += RecordTime;
                 timer.Enabled = true;
                 timer.AutoReset = true;
@@ -190,27 +190,27 @@ namespace playgrounds
                 Console.WriteLine("Benchmarking...");
                 Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 2500");
                 Test1(2500);
-                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
                 Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 75000");
                 Test1(75000);
-                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
                 Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 125000");
                 Test1(125000);
-                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
                 Console.WriteLine("Brute Force: Prime Numbers (Optimized). Upper Limit: 375000");
                 int[] testarray = Test1Optimized(375000);
-                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
                 Console.WriteLine("Palindromes: Previous Setup. Upper Limit: 375000");
                 int[] testarray2 = isPalidrome(testarray);
-                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
                 Console.WriteLine("Average Value Function: Palindromes.");
                 int average = Average(testarray2);
                 Console.WriteLine(average);
-                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
                 Console.WriteLine("Numerical Average Approximation: Palindromes");
                 int[] testarrayf = NumericalApprox(testarray2, average);
-                Console.WriteLine("Finished in: " + elapsedTime);
-                Console.WriteLine("Benchmarking Complete. Elapsed Time: " + elapsedTime);
+                Console.WriteLine("Finished in: " + elapsedTime + "s");
+                Console.WriteLine("Benchmarking Complete. Elapsed Time: " + elapsedTime + "s");
                 timer.Stop();
             }
 
