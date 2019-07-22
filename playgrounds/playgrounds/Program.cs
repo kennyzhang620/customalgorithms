@@ -157,13 +157,22 @@ namespace playgrounds
                 Console.WriteLine("Finished in: " + elapsedTime);
                 Console.WriteLine("Brute Force: Prime Numbers. Upper Limit: 125000");
                 Test1(125000);
-                int[] testarray = new int[375001];
                 Console.WriteLine("Finished in: " + elapsedTime);
                 Console.WriteLine("Brute Force: Prime Numbers (Optimized). Upper Limit: 375000");
-                testarray = Test1Optimized(375000);
+                int[] testarray = Test1Optimized(375000);
                 Console.WriteLine("Finished in: " + elapsedTime);
                 Console.WriteLine("Palindromes: Previous Setup. Upper Limit: 375000");
+  
                 int[] testarray2 = isPalidrome(testarray);
+                foreach (int i in testarray2)
+                {
+                    if (i != 0)
+                    Console.WriteLine(i);
+                }
+                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Average Value Function: Previous Setup.");
+                int average = Average(testarray2);
+                Console.WriteLine(average);
                 Console.WriteLine("Finished in: " + elapsedTime);
 
             }

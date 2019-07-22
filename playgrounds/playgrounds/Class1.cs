@@ -121,20 +121,14 @@ namespace playgrounds
         
       public static int DetectSize(int[] inputarray, int Guess)
         {
-            int testint = 0;
             int output = 0;
-            for (int i = 0;i < Guess; i++)
+
+            foreach (int i in inputarray)
             {
-                try
-                {
-                    testint = inputarray[i];
-                }
-                catch (Exception)
-                {
-                    output = i;
-                    break;
-                }
+                if (i != 0)
+                output++;
             }
+       
             return output;
         }
 
