@@ -9,7 +9,7 @@ namespace playgrounds
         // Given an upper bound, it searches for prime numbers up to that point.
         static void Main(string[] args)
         {
-            Console.WriteLine("Run which program: PrimeDetector/ArrayCount/RootDetector/BasicAverager/Palindrome");
+            Console.WriteLine("Run which program: PrimeDetector/ArrayCount/RootDetector/BasicAverager/Palindrome/NumApprox/StressTest");
             string input = Console.ReadLine();
 
             switch (input) {
@@ -30,6 +30,12 @@ namespace playgrounds
                     break;
                 case "Benchmark":
                     Benchmark();
+                    break;
+                case "NumApprox":
+                    NumberApprox();
+                    break;
+                case "StressTest":
+                    StressTest();
                     break;
                 default:
                     Console.WriteLine("Error. Please Try Again");
@@ -139,6 +145,39 @@ namespace playgrounds
 
             }
 
+            void NumberApprox()
+            {
+                Console.WriteLine("Enter your array: ");
+
+                int[] arrayinput = Array.ConvertAll(Console.ReadLine().Split(','), int.Parse);
+                int average = Average(arrayinput);
+
+                int[] outputarray = NumericalApprox(arrayinput,average);
+
+                Console.WriteLine("Size: " + Class1.DetectSize(arrayinput, 1000));
+                for (int ab = 0; ab < (Class1.DetectSize(arrayinput, 1000)); ab++)
+                {
+                    Console.WriteLine("Approximates to Average - " + average + ": " + outputarray[ab]);
+
+                    if (outputarray[ab] == 0)
+                        break;
+                }
+
+            }
+
+            void StressTest()
+            {
+                int start = 0;
+                Console.WriteLine("Stress Testing CPU... Quit application to stop.");
+                while (start == 0)
+                {
+                    Console.WriteLine("Brute Force: Prime Numbers (Optimized). Upper Limit: 1000000000");
+                    int[] testarray = Test1Optimized(1000000000);
+                    Console.WriteLine("Palindromes: Previous Setup. Upper Limit: 1000000000");
+                    int[] testarray2 = isPalidrome(testarray);
+                }
+            }
+
             void Benchmark()
             {
                 Console.WriteLine("Initalizing System...");
@@ -162,19 +201,17 @@ namespace playgrounds
                 int[] testarray = Test1Optimized(375000);
                 Console.WriteLine("Finished in: " + elapsedTime);
                 Console.WriteLine("Palindromes: Previous Setup. Upper Limit: 375000");
-  
                 int[] testarray2 = isPalidrome(testarray);
-                foreach (int i in testarray2)
-                {
-                    if (i != 0)
-                    Console.WriteLine(i);
-                }
                 Console.WriteLine("Finished in: " + elapsedTime);
-                Console.WriteLine("Average Value Function: Previous Setup.");
+                Console.WriteLine("Average Value Function: Palindromes.");
                 int average = Average(testarray2);
                 Console.WriteLine(average);
                 Console.WriteLine("Finished in: " + elapsedTime);
-
+                Console.WriteLine("Numerical Average Approximation: Palindromes");
+                int[] testarrayf = NumericalApprox(testarray2, average);
+                Console.WriteLine("Finished in: " + elapsedTime);
+                Console.WriteLine("Benchmarking Complete. Elapsed Time: " + elapsedTime);
+                timer.Stop();
             }
 
 

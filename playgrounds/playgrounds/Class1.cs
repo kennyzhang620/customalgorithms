@@ -7,7 +7,38 @@ namespace playgrounds
     public class Class1
     {
        
-    public static int[] isPalidrome(int[] inputarray)
+    public static int[] NumericalApprox(int[] inputarray, int average)
+        {
+
+            int[] averages = new int[DetectSize(inputarray, 1000)];
+            int indexM = 0;
+            for (int di = 0; di < average; di++)
+            {
+                foreach (int i in inputarray)
+                {
+                    if (i == (average - di))
+                    {
+                        averages[indexM] = average - di;
+                   //     Console.WriteLine(averages[indexM]);
+
+                        if (indexM < (DetectSize(inputarray, 1000) - 1))
+                        indexM++;
+                    }
+
+                    if (i == (average + di))
+                    {
+                        averages[indexM] = average + di;
+                        //     Console.WriteLine(averages[indexM]);
+
+                        if (indexM < (DetectSize(inputarray, 1000) - 1))
+                            indexM++;
+                    }
+                }
+            }
+            return averages;
+
+        }
+        public static int[] isPalidrome(int[] inputarray)
         {
             int[] output = new int[DetectSize(inputarray, 1000)];
             int index = 0;
