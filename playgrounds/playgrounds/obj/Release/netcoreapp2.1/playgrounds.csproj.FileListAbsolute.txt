@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\bin\Release\netcoreapp2.1\playgrounds.deps.json
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\bin\Release\netcoreapp2.1\playgrounds.runtimeconfig.json
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\bin\Release\netcoreapp2.1\playgrounds.runtimeconfig.dev.json
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\bin\Release\netcoreapp2.1\playgrounds.dll
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\bin\Release\netcoreapp2.1\playgrounds.pdb
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Release\netcoreapp2.1\playgrounds.csprojAssemblyReference.cache
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Release\netcoreapp2.1\playgrounds.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Release\netcoreapp2.1\playgrounds.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Release\netcoreapp2.1\playgrounds.AssemblyInfo.cs
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Release\netcoreapp2.1\playgrounds.dll
+C:\Users\User\source\repos\algorithms\playgrounds\playgrounds\obj\Release\netcoreapp2.1\playgrounds.pdb

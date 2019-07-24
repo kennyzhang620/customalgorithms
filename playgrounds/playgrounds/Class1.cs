@@ -239,5 +239,43 @@ namespace playgrounds
             }
             return output;
         }
+        public static int[] Test1OptimizedMT(int Maximum, int StartValue)
+        {
+            Console.WriteLine("Computing... (Multithreaded)" + " Upper Bound: " + Maximum);
+            int[] output = new int[Maximum];
+            int outputIndex = 0;
+
+            output[0] = 1;
+            for (int i = StartValue; i < Maximum; i = i + 2)
+            {
+                //  Console.WriteLine("On: " + i);
+                for (int index = 1; index < i; index = index + 2)
+                {
+                    // Console.WriteLine(i + " divided by " + index);
+                    if ((index != 1))
+                    {
+                        if (i % index != 0)
+                        {
+                            output[outputIndex] = i;
+                            //  Console.WriteLine(i + " is Prime.");
+                        }
+                        else
+                        {
+                            output[outputIndex] = 0;
+                            // Console.WriteLine(i + " is not Prime");
+                            i++;
+                            index = 1;
+                        }
+                    }
+                    else
+                    {
+                        output[outputIndex] = i;
+                    }
+                }
+                if (outputIndex < (Maximum - 1))
+                    outputIndex++;
+            }
+            return output;
+        }
     }
 }
